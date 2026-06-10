@@ -104,6 +104,13 @@
   }
 }
 
+#circle{
+  width:100px;
+  height:100px;
+  background-color: blanchedalmond;
+  border-radius:50%; 
+}
+
 #next-steps ul {
   list-style: none;
   padding: 0;
