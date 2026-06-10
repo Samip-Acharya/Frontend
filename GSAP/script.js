@@ -1,5 +1,3 @@
-
-
 var tl = gsap.timeline({
     scrollTrigger: {
         trigger:"#wrapper",
@@ -13,4 +11,5 @@ var tl = gsap.timeline({
 tl.from(".box",{
     x:-500,
     stagger:0.4,
+    backgroundColor:"red"
 })
