@@ -53,6 +53,6 @@ html, body {
 .card button{
   background-color: #333;
   padding:15px;
-  border-radius: 10px;
+  border-radius: 9px;
   cursor: pointer;
 }
