@@ -1,0 +1,37 @@
+@font-face {
+  font-family: china;
+  src: url('./assets/NeueHaasDisplayRoman.ttf');
+}
+*{
+  font-family: china;
+}
+@import "tailwindcss";
+
+.navoptions h3{
+  width:6vw; 
+  text-align: center;
+  padding: 3px 6px;
+  border-radius: 10px;
+}
+.navoptions h3:last-child{
+  width:12vw;
+}
+.navoptions h3::before{
+    content: "";
+    height: 100%;
+    width:100%; 
+    position: absolute;
+    left:0;
+    top:-100%;
+    background-color: rgb(195, 205, 6);
+    transition:all 0.6s ease;
+}
+
+.navoptions h3:hover::before{
+  top:0; 
+}
+.navoptions h3:hover{
+  transform: scale(1.05);
+}
+
+
