@@ -25,6 +25,7 @@ const Navbar = () => {
         stagger:0.3,
     })
   })
+  
   const generateParticle = (e)=>{
         const now = Date.now()
         if(now-lastTimeRef.current <100)return;
@@ -39,7 +40,7 @@ const Navbar = () => {
         particle.style.top = `${y}px`
         particleBoxRef.current.appendChild(particle)
         gsap.to(particle,{
-            y:100,
+            y:gsap.utils.random(-100,100),
             x:gsap.utils.random(-100,100),
             opacity:0,
             delay:gsap.utils.random(0.3,0.6),
@@ -50,19 +51,19 @@ const Navbar = () => {
 
   }
   return (
-    <div className='flex justify-between items-center p-8'>
+    <div className='flex justify-between items-center'>
         <div ref={leftBoxRef} className='flex gap-3 h-fit w-fit items-center'> 
             <Sparkle fill='black' size={50} className='rotate-45'/>
             <h1 className='text-3xl font-bold'>WizardZ</h1>
         </div>
-        <div onMouseMove={(e)=>{generateParticle(e)}} ref={rightBoxRef} className='navoptions flex gap-4 items-center relative'>
+        <div ref={rightBoxRef} className='navoptions flex gap-4 items-center relative'>
             <div ref={particleBoxRef} className='absolute h-full w-full top-0 left-0 pointer-events-none'></div>
-            <h3 className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>About us</span></h3>
-            <h3 className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>Services</span></h3>
-            <h3 className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>Use Cases</span></h3>
-            <h3 className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>Pricing</span></h3>
-            <h3 className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>Blog</span></h3>
-            <h3 className='text-base font-bold cursor-pointer relative overflow-hidden border-black border-2 rounded-md py-2 px-4'><span className='relative z-20'>Request a quote</span></h3>
+            <h3 onMouseMove={(e)=>{generateParticle(e)}} className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>About us</span></h3>
+            <h3 onMouseMove={(e)=>{generateParticle(e)}} className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>Services</span></h3>
+            <h3 onMouseMove={(e)=>{generateParticle(e)}} className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>Use Cases</span></h3>
+            <h3 onMouseMove={(e)=>{generateParticle(e)}} className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>Pricing</span></h3>
+            <h3 onMouseMove={(e)=>{generateParticle(e)}} className='text-base font-bold cursor-pointer relative overflow-hidden border border-gray-400'><span className='relative z-20'>Blog</span></h3>
+            <h3 onMouseMove={(e)=>{generateParticle(e)}} className='text-base font-bold cursor-pointer relative overflow-hidden border-black border-2 rounded-md py-2 px-4'><span className='relative z-20'>Request a quote</span></h3>
         </div>
     </div>
   )
